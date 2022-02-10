@@ -19,7 +19,7 @@ This directory contains a Node.js Azure function that performs basic spatial que
 
 This directory contains a small Node.js application that extracts some data from part of an instance of the Natural England Biodiversity Metric 3.0 containing dummy data.
 
-### biodiversity-net-gain-containers
+### docker
 
 This directory contains artefacts for running Docker containers used by the technical spikes using Azure Maps and geospatial processing.
 
