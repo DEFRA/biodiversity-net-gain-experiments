@@ -22,3 +22,11 @@ This directory contains a small Node.js application that extracts some data from
 ### Results
 
 * A file called **extractedMetric.xslx** should be created in the directory containing this file. The new file will contain a small subset of data extracted from the A1 and A2 tabs of **metric.xlsm**. Data is extracted into another spreadsheet for ease of viewing.
+
+## License
+
+THIS INFORMATION IS LICENSED UNDER THE CONDITIONS OF THE OPEN GOVERNMENT LICENCE found at:
+
+[http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3)
+
+The following attribution statement MUST be cited in your products and applications when using this information.

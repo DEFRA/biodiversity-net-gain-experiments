@@ -22,3 +22,11 @@ This directory contains a small Node.js application that extracts some data from
 ### biodiversity-net-gain-containers
 
 This directory contains artefacts for running Docker containers used by the technical spikes using Azure Maps and geospatial processing.
+
+## License
+
+THIS INFORMATION IS LICENSED UNDER THE CONDITIONS OF THE OPEN GOVERNMENT LICENCE found at:
+
+[http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3)
+
+The following attribution statement MUST be cited in your products and applications when using this information.

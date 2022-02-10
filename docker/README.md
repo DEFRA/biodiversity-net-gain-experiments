@@ -49,3 +49,11 @@ The set up process makes use of partial automation. As these containers are used
   * delete the containers.
   * increase the sleep period in **local_bootstrap.sh**.
   * Run **./local-bootstrap.sh** again.
+
+## License
+
+THIS INFORMATION IS LICENSED UNDER THE CONDITIONS OF THE OPEN GOVERNMENT LICENCE found at:
+
+[http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3)
+
+The following attribution statement MUST be cited in your products and applications when using this information.

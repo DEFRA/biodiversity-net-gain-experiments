@@ -37,3 +37,11 @@ A small Node.js web application capable of rendering Land Registry national poly
 * A layer for the sample Land Registry national polygon data can be toggled on and off.
 * A layer showing land parcels associated with the configured RPA Single Business Identifier can be toggled on and off.
   * If the associated land parcels are in a different area of the map, that area of the map will need to be viewed accordingly.
+
+## License
+
+THIS INFORMATION IS LICENSED UNDER THE CONDITIONS OF THE OPEN GOVERNMENT LICENCE found at:
+
+[http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3)
+
+The following attribution statement MUST be cited in your products and applications when using this information.

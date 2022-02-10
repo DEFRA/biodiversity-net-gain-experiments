@@ -53,3 +53,11 @@ This directory contains a Node.js Azure function that performs basic spatial que
     * Any RPA land parcels associated with in the configured RPA Single Business Identifier.
     * Any existing BNG gain site.
       * **NOTE** - If the sample dummy BNG gain site data is used, the results should reflect the existence of the same data in the containerised PostGIS database.
+
+## License
+
+THIS INFORMATION IS LICENSED UNDER THE CONDITIONS OF THE OPEN GOVERNMENT LICENCE found at:
+
+[http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3)
+
+The following attribution statement MUST be cited in your products and applications when using this information.
