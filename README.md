@@ -11,11 +11,11 @@ This repository contains code associated with a number of standalone technical s
 
 This directory contains artefacts for a small Node.js web application capable of rendering Land Registry national polygon data and Rural Payment Agency land parcels using Microsoft Azure Maps for base mapping.
 
-## biodiversity-net-gain-processor
+### biodiversity-net-gain-processor
 
 This directory contains a Node.js Azure function that performs basic spatial queries on a dummy land boundary associated with an application to the Biodiversity Net Gain public register.
 
-## biodiversity-metric-3.0-extractor
+### biodiversity-metric-3.0-extractor
 
 This directory contains a small Node.js application that extracts some data from part of an instance of the Natural England Biodiversity Metric 3.0 containing dummy data.
 
