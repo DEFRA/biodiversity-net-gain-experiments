@@ -1,0 +1,20 @@
+{
+  "name": "@defra/biodiversity-metric-3.0-extractor-poc",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Proof of concept for Biodiversity Metric 3.0 data extraction",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \\\"Error: run tests from root\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DEFRA/biodiversity-net-gain-service-alpha-experiments",
+    "directory": "biodiversity-metric-3.0-extractor"
+  },
+  "author": "Department for Environment, Food and Rural Affairs <https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs>",
+  "license": "OGL-UK-3.0",
+  "dependencies": {
+    "xlsx": "^0.17.2"
+  }
+}

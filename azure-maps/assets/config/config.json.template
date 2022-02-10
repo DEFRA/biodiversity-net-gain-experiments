@@ -1,0 +1,5 @@
+{
+  "subscriptionKey": "<<Azure Maps subscription key>>
+  "rpaSbi": "<<Rural Payments Agency Single Business Indentifier",
+  "lrNationalPolygonUrlRoot" : "Root URL of Geoserver instance containing sample Land Registry national polygon data - for example, http://localhost:8080"
+}

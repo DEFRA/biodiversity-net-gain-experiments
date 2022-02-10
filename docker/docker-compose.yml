@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  database:
+    build:
+      context: .
+      args:
+        - POSTGRES_PASSWORD_ARG
+      dockerfile: Dockerfile
+    container_name: "bng_db"
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD_ARG}
+    ports:
+      - "${BNG_DB_HOST_PORT:-5432}:${BNG_DB_CONTAINER_PORT:-5432}"
+    volumes:
+        - ./src/scripts/init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - bng_network
+    user: "postgres"
+  geoserver:
+    image: oscarfonts/geoserver
+    ports:
+      - "8080:8080"
+    networks:
+      - bng_network
+networks:
+  bng_network:
+    driver: bridge

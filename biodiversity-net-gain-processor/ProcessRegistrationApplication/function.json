@@ -1,0 +1,18 @@
+{
+  "bindings": [
+    {
+      "name": "message",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "bng-registration-application-queue",
+      "connection": "AzureWebJobsServiceBus"
+    },
+    {
+      "name": "registrationApplicationResult",
+      "type": "serviceBus",
+      "direction": "out",
+      "queueName": "bng-registration-application-result-queue",
+      "connection": "AzureWebJobsServiceBus"
+    }
+  ]
+}

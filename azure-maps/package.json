@@ -1,0 +1,47 @@
+{
+  "name": "@defra/bng-azure-maps-poc",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Proof of concept for use of Azure Maps with selected layers",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DEFRA/biodiversity-net-gain-service-alpha-experiments",
+    "directory": "azure-maps"
+  },
+  "author": "Department for Environment, Food and Rural Affairs <https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs>",
+  "license": "OGL-UK-3.0",
+  "dependencies": {
+    "colormap": "^2.3.2",
+    "ol": "^6.11.0",
+    "ol-hashed": "^2.1.0",
+    "ol-mapbox-style": "^6.8.1"
+  },
+  "eslintConfig": {
+    "extends": "openlayers"
+  },
+  "scripts": {
+    "lint": "standard",
+    "test": "npm run lint",
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode=production"
+  },
+  "standard": {
+    "ignore": [
+      "/build/**"
+    ]
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^10.2.4",
+    "css-loader": "^6.6.0",
+    "eslint": "^7.32.0",
+    "eslint-config-openlayers": "^16.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "kompas": "^0.0.1",
+    "standard": "^16.0.4",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}

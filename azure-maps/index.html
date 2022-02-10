@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>OpenLayers</title>
+  <style>
+    html,
+    body,
+    #map-container {
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      font-family: sans-serif;
+      background-color: #fafafa;
+    }
+
+    #tools {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    #tools a {
+      display: inline-block;
+      padding: 0.5rem;
+      background: white;
+      cursor: pointer;
+    }
+
+    fieldset {
+      margin-top: 0.5rem;
+      background: white;
+    }
+    
+    .map-coordinates {
+      background-color: white !important;
+      border: 1px solid rgba(98, 106, 110, 0.5);
+      bottom: 4em;
+      padding: 10px;
+      position: absolute;
+      left: .5em;
+      width: 130px;
+      z-index: 999;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map-container"></div>
+  <div id="map-coordinates" class="map-coordinates"><strong>Coordinates</strong></div>
+  <div id="tools">
+    <a id="clear">Clear</a>
+    <fieldset>
+      <span id="layerSpan">Layers</span>
+      <div>
+        <input type="checkbox" id="landRegistryNationalPolygons" name="layers" value="landRegistry">
+        <label for="landRegistryNationalPolygons">Land Registry</label>
+      </div>
+      <div>
+        <input type="checkbox" id="rpaLandParcelPolygons" name="layers" value="rpa">
+        <label for="rpaLandParcelPolygons">RPA</label>
+      </div>
+    </fieldset>
+    
+  </div>
+  Copy
+
+</body>
+
+</html>
