@@ -42,12 +42,12 @@ This directory contains a Node.js Azure function that performs basic spatial que
 ### Run The Application Locally
 
 * Run **func start** from the directory containing this file.
-* Place the content of a GeoJSON file defining a polygon or multi-polygon using the United Kingdom spatial reference system (spatial reference system ID 27700) on **bng-registration-application-queue**. The GeoJSON defines a dummy BNG gain site.
+* Place the content of a GeoJSON file defining a polygon or multi-polygon using the United Kingdom spatial reference system (spatial reference system ID 27700) on **bng-geospatial-validation-queue**. The GeoJSON defines a dummy BNG gain site.
   * The **data** subdirectory of the directory containing this file contains a sample file if needed.
 
 ### Results
 
-* When spatial processing has been completed the results should be placed in a message on bng-registration-application-result-queue. The results contain the following:
+* When spatial processing has been completed the results should be placed in a message on bng-geospatial-validation-result-queue. The results contain the following:
   * An indication of whether or not the submitted data is within and/or overlaps:
     * Any polygons in the sample Land Registry data.
     * Any RPA land parcels associated with in the configured RPA Single Business Identifier.

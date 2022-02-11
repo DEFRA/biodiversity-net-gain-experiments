@@ -4,14 +4,14 @@
       "name": "message",
       "type": "serviceBusTrigger",
       "direction": "in",
-      "queueName": "bng-registration-application-queue",
+      "queueName": "bng-geospatial-validation-queue",
       "connection": "AzureWebJobsServiceBus"
     },
     {
-      "name": "registrationApplicationResult",
+      "name": "geospatialValidationResult",
       "type": "serviceBus",
       "direction": "out",
-      "queueName": "bng-registration-application-result-queue",
+      "queueName": "bng-geospatial-validation-result-queue",
       "connection": "AzureWebJobsServiceBus"
     }
   ]

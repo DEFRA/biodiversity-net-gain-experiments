@@ -8,5 +8,5 @@ module.exports = async function (context, message) {
   result.landRegistryBoundaryChecks = await performLandRegistryBoundaryChecks(context, message)
   result.rpaLandParcelBoundaryChecks = await performRpaLandParcelBoundaryChecks(context, message)
   result.bngGainSiteBoundaryChecks = await performBngGainSiteBoundaryChecks(context, message)
-  context.bindings.registrationApplicationResult = result
+  context.bindings.geospatialValidationResult = result
 }
