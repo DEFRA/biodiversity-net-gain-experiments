@@ -5,7 +5,8 @@
   "description": "Proof of concept for Biodiversity Metric 3.0 data extraction",
   "main": "main.js",
   "scripts": {
-    "test": "echo \\\"Error: run tests from root\\\" && exit 1"
+    "lint": "standard",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "license": "OGL-UK-3.0",
   "dependencies": {
     "xlsx": "^0.17.2"
+  },
+  "devDependencies": {
+    "standard": "^16.0.4"
   }
 }
