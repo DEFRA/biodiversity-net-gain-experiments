@@ -1,4 +1,4 @@
-var XLSX = require('xlsx');
+const XLSX = require('xlsx');
 
 function removeUnwantedColumns(data, columnsToRemove) {
 	data.forEach(row => {
@@ -10,17 +10,17 @@ function removeUnwantedColumns(data, columnsToRemove) {
 }
 
 function make_book() {
-	var wb = XLSX.utils.book_new();
+	const wb = XLSX.utils.book_new();
 	return wb;
 }
 
 function addSheetToBook(wb, data, sheetName) {
-	var ws = XLSX.utils.json_to_sheet(data);
+	const ws = XLSX.utils.json_to_sheet(data);
 	XLSX.utils.book_append_sheet(wb, ws, sheetName);
 }
 
 function extractData(file, sheetName, titleCellAddress, cellRange, headers, columnsToBeRemoved) {
-	var workbook = XLSX.readFile(__dirname + file)
+	const workbook = XLSX.readFile(__dirname + file)
 	// const AllWorkbookSheets = workbook.SheetNames
 
 	const worksheet = workbook.Sheets[sheetName]
