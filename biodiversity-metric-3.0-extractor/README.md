@@ -17,7 +17,7 @@ This directory contains a small Node.js application that extracts some data from
 
 ### Run The Application
 
-* Run **node start** from the directory containing this file.
+* Run **node main** from the directory containing this file.
 
 ### Results
 
