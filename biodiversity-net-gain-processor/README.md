@@ -12,8 +12,8 @@ This directory contains a Node.js Azure function that performs basic spatial que
   * Storage account.
   * Function app instance with associated Application Insights instance.
   * Service bus instance with following queues:
-    * bng-registration-application-queue.
-    * bng-registration-application-result-queue.
+    * bng-geospatial-validation-queue.
+    * bng-geospatial-validation-result-queue.
 * Ensure the containerised software documented in the **docker** subdirectory of the root directory of all the alpha experiments is configured and running.
 * If running locally, [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local) for Azure Functions version 4 **must** be installed.
 
