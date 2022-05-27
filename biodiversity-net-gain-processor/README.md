@@ -41,7 +41,7 @@ This directory contains a Node.js Azure function that performs basic spatial que
 
 ### Run The Application Locally
 
-* Run **func start** from the directory containing this file.
+* Run **func messageProcessor** from the directory containing this file.
 * Place the content of a GeoJSON file defining a polygon or multi-polygon using the United Kingdom spatial reference system (spatial reference system ID 27700) on **bng-geospatial-validation-queue**. The GeoJSON defines a dummy BNG gain site.
   * The **data** subdirectory of the directory containing this file contains a sample file if needed.
 

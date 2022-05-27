@@ -28,7 +28,7 @@ A small Node.js web application capable of rendering Land Registry national poly
 
 ### Run The Application
 
-* Run **npm start** from the directory containing this file.
+* Run **npm messageProcessor** from the directory containing this file.
 * Open **<http://localhost:3001>** in a browser.
 
 ### Results

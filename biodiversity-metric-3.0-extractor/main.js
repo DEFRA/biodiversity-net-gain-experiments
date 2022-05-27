@@ -48,6 +48,7 @@ const a2Headers = ['Broad habitat', 'Proposed habitat', 'Proposed habitat 2', 'A
 const a2ColmnsToRemove = ['Proposed habitat 2', 'Distinctiveness', 'Distinctiveness_Score', 'Condition_Score', 'Strategic significance_1', 'Strategic position multiplier', 'Standard time to target condition/years', 'Standard or adjusted time to target condition', 'Final time to target condition/years', 'Final time to target multiplier', 'Standard difficulty of creation', 'Applied difficulty multiplier', 'Final difficulty of creation', 'Difficulty multiplier applied']
 const a2CreationData = extractData(file, 'A-2 Site Habitat Creation', 'D3', 'D11:AA19', a2Headers, a2ColmnsToRemove)
 
+
 // add new sheets to new workbook
 addSheetToBook(wb, a1BaselineData, 'A-1 Site Habitat Baseline')
 addSheetToBook(wb, a2CreationData, 'A-2 Site Habitat Creation')
