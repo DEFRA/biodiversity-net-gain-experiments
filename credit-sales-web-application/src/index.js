@@ -1,10 +1,12 @@
-import { createServer, init } from './server.js'
+import { createServer, init, start } from './server.js'
 
 createServer()
   .then(server =>
-    init(server)
-      .catch(err => {
-        console.error(err)
-        process.exit(1)
-      })
+      init(server)
+          .then(server =>
+            start(server)
+              .catch(err => {
+                console.error(err)
+                process.exit(1)
+              }))
   )

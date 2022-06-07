@@ -37,9 +37,14 @@ const init = async server => {
   await server.register(logging)
   await server.register(session)
   await server.register(Blipp)
+  
+  return server;
+  // await server.start()
+}
 
+const start = async server => {
   // Start the server
   await server.start()
 }
 
-export { createServer, init }
+export { createServer, init, start }

@@ -13,7 +13,7 @@
     "build:copy-static": "bin/build-copy-static",
     "build:css": "bin/build-css",
     "start": "node ./src/index.js",
-    "test": "echo \"Error: run tests from root\" && exit 1",
+    "test": "echo \\\"Error: run _tests_ from root\\\" && exit 1",
     "lint": "standard",
     "docker:build": "docker build . -t credit-sales-web-application",
     "docker:start": "docker run --name credit-sales-web-application -p 3000:3000 -d credit-sales-web-application",
@@ -37,6 +37,7 @@
     "xlsx": "^0.17.2"
   },
   "devDependencies": {
-    "standard": "16.0.4"
+    "standard": "16.0.4",
+    "jest": true
   }
 }
