@@ -11,25 +11,24 @@ import { SERVER_PORT } from './utils/config.js'
 
 const createServer = async options => {
   // Create the hapi server
-  options = Object.assign({
-    port: SERVER_PORT,
-    routes: {
-      validate: {
-        options: {
-          abortEarly: false
-        }
+    options = Object.assign({
+      port: SERVER_PORT,
+      routes: {
+        validate: {
+          options: {
+            abortEarly: false
+          }
+        },
+        cors: true,
+        security: true
       },
-      cors: true,
-      security: true
-    },
-    cache: cache
-  }, options)
-
+      cache: cache
+    }, options)
   return new Hapi.Server(options)
 }
 
 const init = async server => {
-  // Register the plugins
+  
   await server.register(Inert)
   await server.register(views)
   await server.register(router)
@@ -38,13 +37,7 @@ const init = async server => {
   await server.register(session)
   await server.register(Blipp)
   
-  return server;
-  // await server.start()
+  await server.start();
 }
 
-const start = async server => {
-  // Start the server
-  await server.start()
-}
-
-export { createServer, init, start }
+export { createServer, init}

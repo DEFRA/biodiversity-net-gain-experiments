@@ -15,7 +15,7 @@ const uploadRoute = [
 	path: '/upload-file',
 	config: {
 		handler: function (request, response) {
-			console.log('****** Upload file called ' + request.yar.get('sessionEmailAddress'));
+
 			const payload = request.payload;
 			const destinationFilePath = UPLOADED_FILE_DIRECTORY_NAME + payload.file.filename;
 			

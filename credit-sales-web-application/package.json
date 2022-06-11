@@ -7,6 +7,7 @@
   "author": "DEFRA",
   "license": "OGL",
   "scripts": {
+    "unit-test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --verbose",
     "postinstall": "npm run build",
     "build": "bin/build",
     "build:clean": "bin/build-clean-public",
@@ -36,8 +37,15 @@
     "sass": "^1.50.1",
     "xlsx": "^0.17.2"
   },
+  "jest": {
+    "transform": {},
+    "testEnvironment": "jest-environment-jsdom-sixteen"
+  },
   "devDependencies": {
+    "jest": "^26.1.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "jest-environment-node": "^26.1.0",
     "standard": "16.0.4",
-    "jest": true
+    "supertest": "^6.2.3"
   }
 }

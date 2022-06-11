@@ -14,6 +14,7 @@ const publicRoutes = [{
       path: [
         `${dirname}/public/static`,
         `${dirname}/public/build`,
+        `${dirname}/public/build/stylesheets`,
         `${dirname}/node_modules/govuk-frontend/govuk`,
         `${dirname}/node_modules/govuk-frontend/govuk/assets`
       ]

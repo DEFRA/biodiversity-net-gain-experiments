@@ -56,37 +56,6 @@ const processBiodiversityMetrics = (payload, bioDiversityFile) => {
 		return extractionResults;
 	}
 	
-	
-	// const processHeadlineSummary = (workBook) => {
-	// 	workBook.SheetNames.filter(sheetName => sheetName == 'Headline Results')
-	// 		.flatMap(sheetName => xslx.utils.sheet_to_json(workBook.Sheets[sheetName]))
-	// 		.filter(element => Object.keys(element).length == 3)
-	// 		.map(element => {
-	// 			creditSalesDomain.headlineSummary.push({
-	// 				'title': element['__EMPTY_1'],
-	// 				'subTitle': element['__EMPTY_5'],
-	// 				'totalAMount': element['__EMPTY_7']
-	// 			});
-	// 		});
-	// }
-	//
-	// const processHabitatBaseline = (workBook) => {
-	// 	workBook.SheetNames.filter(sheetName => sheetName == 'A-1 Site Habitat Baseline')
-	// 		.flatMap(sheetName => xslx.utils.sheet_to_json(workBook.Sheets[sheetName]))
-	// 		.filter(element => Object.keys(element).length == 29)
-	// 		.map(element => {
-	// 			creditSalesDomain.habitatBaseline.push({
-	// 				'habitatType': element['__EMPTY_5'],
-	// 				'area': element['__EMPTY_7'],
-	// 				'condition': element['__EMPTY_10'],
-	// 				'bioDiversityNeeded': 'CALCULATE?'
-	// 			});
-	// 		});
-	// }
-	// processHeadlineSummary(workBook);
-	// processHabitatBaseline(workBook);
-	
-	
 	const habitatBaselineConfig = {
 		sheetName: 'A-1 Site Habitat Baseline',
 		startRowNumber: 10,

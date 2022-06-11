@@ -1,8 +1,8 @@
 const start = {
   method: 'GET',
   path: '/',
-  handler: {
-    view: 'start'
+  handler: function(request, response){
+    return response.view('start');
   }
 }
 

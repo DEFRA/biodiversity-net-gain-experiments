@@ -13,8 +13,7 @@ async function sendBiodiversityMessagetToQueue(payload) {
 	const sender = sbClient.createSender(queueName);
 	try {
 		const messages = [
-			{ body: JSON.stringify(payload) },
-			{ body: "Werner Heisenberg" }
+			{ body: JSON.stringify(payload) }
 		];
 		await sender.sendMessages(messages);
 	}finally {
