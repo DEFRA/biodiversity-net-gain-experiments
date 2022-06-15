@@ -31,7 +31,7 @@ jobs:
       # Runs node install dependencies
       - name: Run npm install
         run: |
-          cd ${{ github.workspace }}/credit-sales-web-application
+          ls ${{ github.workspace }}/credit-sales-web-application
           npm install
 #      - name: Run unit test
 #        run: |
