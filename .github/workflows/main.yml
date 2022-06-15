@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./credit-sales-web-application
+        working-directory: ${{ github.workspace }}/credit-sales-web-application
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -30,14 +30,10 @@ jobs:
           node_version: '14'
       # Runs node install dependencies
       - name: Run npm install
-        run: |
-          cd credit-sales-web-application
-          npm install
-
-      - name: Run unit test
-        working-directory: ${{ github.workspace }}/credit-sales-web-application
-        run: |
-          npm run unit-test
+        run: npm install
+#      - name: Run unit test
+#        run: |
+#          npm run unit-test
 #      - name: Set up QEMU
 #        uses: docker/setup-qemu-action@v2
 #      - name: Set up Docker Buildx
