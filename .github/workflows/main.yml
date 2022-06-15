@@ -31,8 +31,7 @@ jobs:
       # Runs node install dependencies
       - name: Run npm install
         run: |
-          pwd
-          ls -ltr
+          cd credit-sales-web-application
           npm install
 #      - name: Run unit test
 #        run: |
