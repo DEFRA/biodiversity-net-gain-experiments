@@ -26,10 +26,10 @@ jobs:
         with:
           node_version: '14'
       # Runs node install dependencies
-      - name: Run npm install
-        working-direcrtory: credit-sales-web-application
-        run: |
-          npm install
+#      - name: Run npm install
+#        working-direcrtory: credit-sales-web-application
+#        run: |
+#          npm install
 #      - name: Run unit test
 #        run: |
 #          npm run unit-test
