@@ -28,12 +28,12 @@ jobs:
           node_version: '14'
       # Runs node install dependencies
       - name: Run npm install
-        working-directory: ./credit-sales-web-application
+        working-directory: ${{ github.workspace }}/credit-sales-web-application
         run: npm install
 
       # Runs a set of commands using the runners shell
       - name: Run unit test
-        working-directory: ./credit-sales-web-application
+        working-directory: ${{ github.workspace }}/credit-sales-web-application
         run: |
           npm run unit-test
 #      - name: Set up QEMU
