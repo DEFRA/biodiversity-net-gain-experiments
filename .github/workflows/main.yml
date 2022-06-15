@@ -30,8 +30,9 @@ jobs:
           node_version: '14'
       # Runs node install dependencies
       - name: Run npm install
-        working-directory: ${{ github.workspace }}/credit-sales-web-application
-        run: npm install
+        run: |
+          cd credit-sales-web-application
+          npm install
 
       - name: Run unit test
         working-directory: ${{ github.workspace }}/credit-sales-web-application
