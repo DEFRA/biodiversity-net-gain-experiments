@@ -27,9 +27,8 @@ jobs:
           node_version: '14'
       # Runs node install dependencies
       - name: Run npm install
-        run: |
-          pwd
-          npm --prefix credit-sales-web-application install
+        working-direcrtory: credit-sales-web-application
+        run: npm install
 #      - name: Run unit test
 #        run: |
 #          npm run unit-test
