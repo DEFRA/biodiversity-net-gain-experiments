@@ -33,9 +33,9 @@ jobs:
         run: |
           npm install -g lerna
           lerna exec -- npm i && lerna link
-      - name: Run unit test
-        run: |
-          lerna run unit-test
+#      - name: Run unit test
+#        run: |
+#          lerna run unit-test
 #      - name: Set up QEMU
 #        uses: docker/setup-qemu-action@v2
 #      - name: Set up Docker Buildx
