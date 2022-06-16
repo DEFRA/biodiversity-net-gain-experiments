@@ -52,7 +52,6 @@ jobs:
           load: true
           context: credit-sales-web-application
           file: credit-sales-web-application/dockerfile
-          push: true
           tags: creditsalesregistry.azurecr.io/credit-sales-web-application${{github.run_number}}:latest
 #      - name: Login to azure
 #        working-directory: ./credit-sales-web-application
