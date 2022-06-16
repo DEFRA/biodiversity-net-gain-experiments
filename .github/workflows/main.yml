@@ -63,5 +63,5 @@ jobs:
       - uses: azure/k8s-deploy@v1
         with:
           manifests: |
-            ${{ github.workspace }}/credit-sales-web-application/deployment/deployment.yaml
+            deployment.yaml
 
