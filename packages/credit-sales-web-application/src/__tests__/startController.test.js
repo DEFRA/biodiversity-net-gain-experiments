@@ -58,13 +58,13 @@ describe('Controller tests', () => {
 	// 	expect(data.statusCode).toBe(204);
 	// });
 	
-	it('test public resource controller get stylesheet', async function () {
-		const options = {
-			method: 'GET',
-			url: '/public/application.css'
-		};
-		const data = await server.inject(options);
-		expect(data.statusCode).toBe(200);
+	// it('test public resource controller get stylesheet', async function () {
+	// 	const options = {
+	// 		method: 'GET',
+	// 		url: '/public/application.css'
+	// 	};
+	// 	const data = await server.inject(options);
+	// 	expect(data.statusCode).toBe(200);
 	});
 	
 	it('test start of file upload controller', async function () {
