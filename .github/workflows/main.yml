@@ -32,9 +32,9 @@ jobs:
           npm install --location=global lerna
           lerna bootstrap
           lerna link && lerna exec npm install
-#      - name: Run unit test
-#        run: |
-#          lerna run unit-test
+      - name: Run unit test
+        run: |
+          lerna run unit-test
 #      - name: Set up QEMU
 #        uses: docker/setup-qemu-action@v2
 #      - name: Set up Docker Buildx
