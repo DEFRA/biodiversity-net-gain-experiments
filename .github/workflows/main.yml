@@ -33,7 +33,7 @@ jobs:
         run: |
           npm install --location=global lerna
           lerna bootstrap
-          lerna exec -- npm i && lerna link
+          lerna link && lerna exec npm install
 #      - name: Run unit test
 #        run: |
 #          lerna run unit-test
