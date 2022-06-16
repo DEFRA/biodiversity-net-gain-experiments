@@ -21,9 +21,6 @@ jobs:
     strategy:
       matrix:
         node-version: [ 16.x]
-    defaults:
-      run:
-        working-directory: credit-sales-web-application
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -35,9 +32,10 @@ jobs:
       - name: Run npm install
         run: |
           npm install
-#      - name: Run unit test
-#        run: |
-#          npm run unit-test
+          npm install -g lerna
+      - name: Run unit test
+        run: |
+          lerna run unit-test
 #      - name: Set up QEMU
 #        uses: docker/setup-qemu-action@v2
 #      - name: Set up Docker Buildx
