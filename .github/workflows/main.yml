@@ -50,11 +50,11 @@ jobs:
           password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
       - name: Build and push
         uses: docker/build-push-action@v3
-        with:
-          file: credit-sales-web-application/Dockerfile
-          context: .
-          push: false
-          tags: creditsalesregistry.azurecr.io/credit-sales-web-application${{github.run_number}}:latest
+#        with:
+#          file: credit-sales-web-application/Dockerfile
+#          context: .
+#          push: false
+#          tags: creditsalesregistry.azurecr.io/credit-sales-web-application${{github.run_number}}:latest
 #      - name: Login to azure
 #        working-directory: ./credit-sales-web-application
 #        uses: azure/login@v1
