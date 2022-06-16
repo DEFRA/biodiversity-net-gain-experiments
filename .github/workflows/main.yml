@@ -48,8 +48,8 @@ jobs:
           login-server: ${{ secrets.AZURE_SERVER }}
           username: ${{ secrets.AZURE_REGISTRY_USER_NAME }}
           password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
-      - name: Build and push
-        uses: docker/build-push-action@v3
+#      - name: Build and push
+#        uses: docker/build-push-action@v3
 #        with:
 #          file: credit-sales-web-application/Dockerfile
 #          context: .
