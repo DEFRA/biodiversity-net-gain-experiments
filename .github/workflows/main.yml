@@ -47,7 +47,7 @@ jobs:
           password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
       - name: Build and push
         run: |
-          docker login ${{AZURE_SERVER}} -u ${{AZURE_REGISTRY_USER_NAME}} -p ${{AZURE_REGISTRY_PASSWORD}}
+          docker login ${{secrets.AZURE_SERVER}} -u ${{secrets.AZURE_REGISTRY_USER_NAME}} -p ${{secrets.AZURE_REGISTRY_PASSWORD}}
           lerna run docker-tag
           lerna run docker-deploy
 #      - name: Build and push
