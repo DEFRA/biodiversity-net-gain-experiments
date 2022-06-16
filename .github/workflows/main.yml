@@ -54,14 +54,14 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - name: Deploy to azure kubernetes
+      - name: DSet up azure context
         uses: azure/aks-set-context@v2
         with:
           cluster-name: ${{ secrets.AZURE_CLUSTER_NAME}}
           resource-group: ${{ secrets.AZURE_RESOURCE_GROUP }}
-#      # Deploy app to AKS
-#      - uses: azure/k8s-deploy@v1
-#        with:
-#          manifests: |
-#            ${{ github.workspace }}/credit-sales-web-application/deployment/deployment.yaml
-#
+      # Deploy app to AKS
+      - uses: azure/k8s-deploy@v1
+        with:
+          manifests: |
+            ${{ github.workspace }}/biodiversity-net-gain-service-alpha-experiments/credit-sales-web-application/deployment/deployment.yaml
+
