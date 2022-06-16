@@ -8,8 +8,6 @@
   "license": "OGL",
   "scripts": {
     "unit-test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --verbose",
-    "postinstall": "npm run build",
-    "build": "bin/build",
     "build:clean": "bin/build-clean-public",
     "build:copy-static": "bin/build-copy-static",
     "build:css": "bin/build-css",
