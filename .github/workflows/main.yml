@@ -49,7 +49,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: credit-sales-web-application/dockerfile
+          file: ${{ github.workspace }}/credit-sales-web-application/dockerfile
           push: false
           tags: creditsalesregistry.azurecr.io/credit-sales-web-application${{github.run_number}}:latest
 #      - name: Login to azure
