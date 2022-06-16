@@ -65,7 +65,7 @@ describe('Controller tests', () => {
 	// 	};
 	// 	const data = await server.inject(options);
 	// 	expect(data.statusCode).toBe(200);
-	});
+	// });
 	
 	it('test start of file upload controller', async function () {
 		const options = {
