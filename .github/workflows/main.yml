@@ -31,7 +31,6 @@ jobs:
       # Runs node install dependencies
       - name: Run npm install
         run: |
-          npm install
           npm install -g lerna
           lerna exec -- npm i && lerna link
       - name: Run unit test
