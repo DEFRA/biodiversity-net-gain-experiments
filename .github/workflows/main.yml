@@ -30,6 +30,7 @@ jobs:
       - name: Run npm install
         run: |
           npm install --location=global lerna
+          npm i nx --save-dev
           lerna bootstrap
           lerna link && lerna exec npm install
       - name: Run unit test
