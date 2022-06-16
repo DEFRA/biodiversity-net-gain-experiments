@@ -47,12 +47,14 @@ jobs:
           username: ${{ secrets.AZURE_REGISTRY_USER_NAME }}
           password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
       - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          load: true
-          context: credit-sales-web-application
-          file: credit-sales-web-application/dockerfile
-          tags: creditsalesregistry.azurecr.io/credit-sales-web-application${{github.run_number}}:latest
+        run: |
+          lerna run docker-tag
+          lerna run docker-deploy
+#      - name: Build and push
+#        uses: docker/build-push-action@v3
+#        with:
+#          push: true
+#          tags: creditsalesregistry.azurecr.io/credit-sales-web-application${{github.run_number}}:latest
 #      - name: Login to azure
 #        working-directory: ./credit-sales-web-application
 #        uses: azure/login@v1

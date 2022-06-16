@@ -14,9 +14,11 @@
     "start": "node ./src/index.js",
     "test": "echo \\\"Error: run _tests_ from root\\\" && exit 1",
     "lint": "standard",
-    "docker:build": "docker build . -t credit-sales-web-application",
-    "docker:start": "docker run --name credit-sales-web-application -p 3000:3000 -d credit-sales-web-application",
-    "docker:stop": "docker kill credit-sales-web-application && docker rm credit-sales-web-application"
+    "docker-build": "docker build . -t credit-sales-web-application",
+    "docker-start": "docker run --name credit-sales-web-application -p 3000:3000 -d credit-sales-web-application",
+    "docker-stop": "docker kill credit-sales-web-application && docker rm credit-sales-web-application",
+    "docker-tag": "docker build . -t creditsalesregistry.azurecr.io/credit-sales-web-application$npm_package_version",
+    "docker-deploy": "docker push creditsalesregistry.azurecr.io/credit-sales-web-application$npm_package_version"
   },
   "dependencies": {
     "@azure/service-bus": "^7.5.1",
