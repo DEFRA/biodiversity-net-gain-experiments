@@ -50,27 +50,18 @@ jobs:
           docker login ${{secrets.AZURE_SERVER}} -u ${{secrets.AZURE_REGISTRY_USER_NAME}} -p ${{secrets.AZURE_REGISTRY_PASSWORD}}
           lerna run docker-tag
           lerna run docker-deploy
-#      - name: Build and push
-#        uses: docker/build-push-action@v3
-#        with:
-#          context: .
-#          file: ${{ github.workspace }}/credit-sales-web-application/dockerfile
-#          push: false
-#          tags: creditsalesregistry.azurecr.io/credit-sales-web-application${{github.run_number}}:latest
-#      - name: Login to azure
-#        working-directory: ./credit-sales-web-application
-#        uses: azure/login@v1
-#        with:
-#          creds: ${{ secrets.AZURE_CREDENTIALS }}
-#      - name: Deploy to azure kubernetes
-#        working-directory: ./credit-sales-web-application
-#        uses: azure/aks-set-context@v2
-#        with:
-#          cluster-name: ${{ secrets.AZURE_CLUSTER_NAME}}
-#          resource-group: ${{ secrets.AZURE_RESOURCE_GROUP }}
+      - name: Login to azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Deploy to azure kubernetes
+        uses: azure/aks-set-context@v2
+        with:
+          cluster-name: ${{ secrets.AZURE_CLUSTER_NAME}}
+          resource-group: ${{ secrets.AZURE_RESOURCE_GROUP }}
 #      # Deploy app to AKS
 #      - uses: azure/k8s-deploy@v1
 #        with:
 #          manifests: |
 #            ${{ github.workspace }}/credit-sales-web-application/deployment/deployment.yaml
-  
+#
