@@ -1,0 +1,52 @@
+{
+  "name": "credit-sales-calculator-application",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "credit-sales-calculator-application",
+  "main": "src/index.js",
+  "author": "DEFRA",
+  "license": "OGL",
+  "scripts": {
+    "unit-test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --verbose",
+    "postinstall": "npm run build",
+    "build": "bin/build",
+    "build:clean": "bin/build-clean-public",
+    "build:copy-static": "bin/build-copy-static",
+    "build:css": "bin/build-css",
+    "start": "node ./src/index.js",
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "lint": "standard",
+    "docker:build": "docker build . -t credit-sales-calculator-application",
+    "docker:start": "docker run --name credit-sales-calculator-application -p 3000:3000 -d credit-sales-calculator-application",
+    "docker:stop": "docker kill credit-sales-calculator-application && credit-sales-calculator-application"
+  },
+  "dependencies": {
+    "@azure/service-bus": "^7.5.1",
+    "@hapi/boom": "9.1.4",
+    "@hapi/catbox-redis": "^6.0.2",
+    "@hapi/hapi": "20.2.1",
+    "@hapi/inert": "6.0.5",
+    "@hapi/joi": "^17.1.1",
+    "@hapi/vision": "6.1.0",
+    "@hapi/yar": "^10.1.1",
+    "blipp": "4.0.2",
+    "govuk-frontend": "4.0.1",
+    "hapi-i18n": "^3.0.1",
+    "hapi-pino": "9.3.0",
+    "jest-when": "^3.5.1",
+    "joi": "^17.6.0",
+    "nunjucks": "3.2.3",
+    "pg": "^8.7.3",
+    "sass": "^1.50.1",
+    "sequelize": "^6.19.2",
+    "xlsx": "^0.17.2"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "jest-environment-node": "^26.1.0",
+    "jest-mock": "^28.1.1",
+    "standard": "16.0.4",
+    "supertest": "^6.2.3"
+  }
+}
