@@ -21,6 +21,7 @@ class CreditSalesCalculatorRoute{
 					}
 				},
 				handler: async (request, response) => {
+					console.log('*********** received request *******')
 					const result = await this.#creditSalesDataService.saveBiodiversityMetrics(request.payload);
 					return response.response({
 						result

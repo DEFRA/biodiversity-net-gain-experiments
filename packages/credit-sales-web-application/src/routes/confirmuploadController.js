@@ -1,4 +1,5 @@
-import sendBiodiversityMessagetToQueue from '../utils/azurequeuemessagesender.js'
+// import sendBiodiversityMessagetToQueue from '../utils/azurequeuemessagesender.js'
+import BiodiversityQueueSender from '../utils/azureququemessagesender.js'
 import {UPLOADED_FILE_DIRECTORY_NAME} from '../utils/config.js';
 import processBiodiversityMetrics from '../utils/biodiversityExtractor.js'
 
@@ -35,7 +36,9 @@ const confirmuploadController = [{
 							}
 						])
 					})
-					await sendBiodiversityMessagetToQueue(request.yar.get('biodiversityMetricsData'));
+					// await sendBiodiversityMessagetToQueue(request.yar.get('biodiversityMetricsData'));
+					let azureQueueSender = new BiodiversityQueueSender();
+					await azureQueueSender.sendBiodiversityMessagetToQueue(request.yar.get('biodiversityMetricsData'));
 					return response.view('metric-file-calculation', {
 						habitatData: habitatDetails
 					});
