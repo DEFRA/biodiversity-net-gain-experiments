@@ -1,0 +1,24 @@
+{
+  "name": "bngdataextractor",
+  "version": ".0.0",
+  "description": "bio diversity data extractor",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --verbose --testTimeout=30000"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "stream": "^0.0.2",
+    "xlsx": "^0.17.2",
+    "sequelize": "^6.19.2",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "jest-environment-node": "^26.1.0",
+    "standard": "16.0.4"
+  }
+}
