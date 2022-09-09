@@ -9,7 +9,6 @@ on:
     branches: [ "master", "jest-exterimental" ]
   pull_request:
     branches: [ "master", "jest-exterimental" ]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -18,58 +17,51 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [ 16.x]
-    defaults:
-      run:
-        working-directory: credit-sales-web-application
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
         with:
-          node_version: ${{ matrix.node-version }}
+          node-version: "16.x"
       # Runs node install dependencies
       - name: Run npm install
         run: |
-          npm install
-#      - name: Run unit test
-#        run: |
-#          npm run unit-test
-#      - name: Set up QEMU
-#        uses: docker/setup-qemu-action@v2
-#      - name: Set up Docker Buildx
-#        working-directory: ./credit-sales-web-application
-#        uses: docker/setup-buildx-action@v2
-#      - name: Login to Azure registry
-#        working-directory: ./credit-sales-web-application
-#        uses: azure/docker-login@v1
-#        with:
-#          login-server: ${{ secrets.AZURE_SERVER }}
-#          username: ${{ secrets.AZURE_REGISTRY_USER_NAME }}
-#          password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
-#      - name: Build and push
-#        working-directory: ./credit-sales-web-application
-#        uses: docker/build-push-action@v3
-#        with:
-#          push: true
-#          tags: creditsalesregistry.azurecr.io/credit-sales-web-application${{github.run_number}}:latest
-#      - name: Login to azure
-#        working-directory: ./credit-sales-web-application
-#        uses: azure/login@v1
-#        with:
-#          creds: ${{ secrets.AZURE_CREDENTIALS }}
-#      - name: Deploy to azure kubernetes
-#        working-directory: ./credit-sales-web-application
-#        uses: azure/aks-set-context@v2
-#        with:
-#          cluster-name: ${{ secrets.AZURE_CLUSTER_NAME}}
-#          resource-group: ${{ secrets.AZURE_RESOURCE_GROUP }}
-#      # Deploy app to AKS
-#      - uses: azure/k8s-deploy@v1
-#        with:
-#          manifests: |
-#            ${{ github.workspace }}/credit-sales-web-application/deployment/deployment.yaml
-  
+          npm install --location=global lerna
+          npm i nx --save-dev
+          lerna bootstrap
+          lerna link && lerna exec npm install
+      - name: Run unit test
+        run: |
+          lerna run unit-test
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Login to Azure registry
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.AZURE_SERVER }}
+          username: ${{ secrets.AZURE_REGISTRY_USER_NAME }}
+          password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
+      - name: Build and push
+        run: |
+          docker login ${{secrets.AZURE_SERVER}} -u ${{secrets.AZURE_REGISTRY_USER_NAME}} -p ${{secrets.AZURE_REGISTRY_PASSWORD}}
+          lerna run docker-tag
+          lerna run docker-deploy
+      - name: Login to azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: DSet up azure context
+        uses: azure/aks-set-context@v2
+        with:
+          cluster-name: ${{ secrets.AZURE_CLUSTER_NAME}}
+          resource-group: ${{ secrets.AZURE_RESOURCE_GROUP }}
+      # Deploy app to AKS
+      - uses: azure/k8s-deploy@v1
+        with:
+          manifests: |
+            deployment.yaml
+

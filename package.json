@@ -1,0 +1,24 @@
+{
+  "name": "biodiversity-net-gain-service-alpha-experiments",
+  "version": "1.0.0",
+  "description": "This repository contains code associated with a number of standalone technical spikes performed during the alpha phase for the [Biodiversity Net Gain digital service]((https://github.com/DEFRA/biodiversity-net-gain-service)). Due to the disposable nature of the code:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DEFRA/biodiversity-net-gain-service-alpha-experiments.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DEFRA/biodiversity-net-gain-service-alpha-experiments/issues"
+  },
+  "homepage": "https://github.com/DEFRA/biodiversity-net-gain-service-alpha-experiments#readme",
+  "devDependencies": {
+    "lerna": "^5.1.4",
+    "nx": "^14.3.5"
+  }
+}
