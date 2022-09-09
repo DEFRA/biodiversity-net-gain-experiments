@@ -29,6 +29,7 @@
     "@hapi/joi": "^17.1.1",
     "@hapi/vision": "6.1.0",
     "@hapi/yar": "^10.1.1",
+    "@microsoft/signalr": "^6.0.7",
     "blipp": "4.0.2",
     "govuk-frontend": "4.0.1",
     "hapi-i18n": "^3.0.1",

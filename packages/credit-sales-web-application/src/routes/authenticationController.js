@@ -9,8 +9,8 @@ const loginRoute = [
 	{
 		method: 'POST',
 		path: '/login',
-		handler: (request, response) => {
-			request.yar.set('sessionEmailAddress', request.payload.emailAddress);
+		handler: async (request, response) => {
+			await request.server.session.set('sessionEmailAddress', request.payload.emailAddress);
 			return response.redirect('metric-file-upload', {
 				emailAddress: request.payload.emailAddress,
 			});

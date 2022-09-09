@@ -18,8 +18,10 @@ const confirmuploadController = [{
 		config: {
 			handler: async function (request, response) {
 				const habitatDetails = [];
-				if(request.yar.get('biodiversityMetricsData') != undefined) {
-					request.yar.get('biodiversityMetricsData').habitatBaseline.forEach((baseline) => {
+				let biodiversityMetricsData = await request.server.session.get('biodiversityMetricsData');
+				if(biodiversityMetricsData != undefined) {
+					let extractedData = JSON.parse(biodiversityMetricsData);
+					extractedData.habitatBaseline.forEach((baseline) => {
 						
 						habitatDetails.push([
 							{
@@ -36,9 +38,8 @@ const confirmuploadController = [{
 							}
 						])
 					})
-					// await sendBiodiversityMessagetToQueue(request.yar.get('biodiversityMetricsData'));
 					let azureQueueSender = new BiodiversityQueueSender();
-					await azureQueueSender.sendBiodiversityMessagetToQueue(request.yar.get('biodiversityMetricsData'));
+					await azureQueueSender.sendBiodiversityMessagetToQueue(extractedData);
 					return response.view('metric-file-calculation', {
 						habitatData: habitatDetails
 					});

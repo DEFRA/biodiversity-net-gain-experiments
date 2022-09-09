@@ -14,15 +14,14 @@ const uploadRoute = [
 	method: 'POST',
 	path: '/upload-file',
 	config: {
-		handler: function (request, response) {
+		handler: async (request, response) => {
 
 			const payload = request.payload;
 			const destinationFilePath = UPLOADED_FILE_DIRECTORY_NAME + payload.file.filename;
 			
 			fs.copyFileSync(payload.file.path, destinationFilePath);
 			let biodiversityMetricsData = processBiodiversityMetrics(payload, destinationFilePath);
-			request.yar.set('biodiversityMetricsData', biodiversityMetricsData);
-			
+			await request.server.session.set('biodiversityMetricsData', biodiversityMetricsData);
 			return response.view('metric-file-confirm', {
 				biodiversityMetricsData : {
 					fileName: payload.file.filename,

@@ -1,4 +1,6 @@
-import Joi from '@hapi/joi'
+import Joi from '@hapi/joi';
+import signalR from '@microsoft/signalr';
+
 class CreditSalesCalculatorRoute{
 	
 	#creditSalesDataService = undefined;
@@ -21,8 +23,8 @@ class CreditSalesCalculatorRoute{
 					}
 				},
 				handler: async (request, response) => {
-					console.log('*********** received request *******')
 					const result = await this.#creditSalesDataService.saveBiodiversityMetrics(request.payload);
+					//TODO send the result to web using signal R
 					return response.response({
 						result
 					}).code(200);

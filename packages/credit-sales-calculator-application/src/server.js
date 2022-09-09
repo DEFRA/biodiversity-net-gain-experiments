@@ -32,9 +32,9 @@ class ServerConfiguration{
   init = async (server, plugins) => {
     // Register the plugins
     await server.register(plugins.inert)
-    await server.register(plugins.router)
+    // await server.register(plugins.router)
     await server.register(plugins.logging)
-    await server.register(plugins.session)
+    // await server.register(plugins.session)
     await server.register(plugins.blipp)
   
     server.validator(plugins.joi);

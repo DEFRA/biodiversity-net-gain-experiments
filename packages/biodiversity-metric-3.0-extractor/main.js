@@ -28,7 +28,6 @@ function extractData (file, sheetName, titleCellAddress, cellRange, headers, col
   worksheet['!ref'] = cellRange // change the sheet range to get specified rows
   const data = XLSX.utils.sheet_to_json(worksheet, { header: headers, defval: 'null' }) // will only use cells within the new range
   const extractedData = removeUnwantedColumns(data, columnsToBeRemoved)
-  console.log('Tab title:', sheetTitle, '\n', 'Final data:', extractedData)
   return extractedData
 }
 
